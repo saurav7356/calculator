@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1><br>
+    Enter First Number: <input type="text" id="text1"><br>
+    Enter Second Number: <input type="text" id="text2"><br>
+    Result: <input type="text" id="result"><br>
+    <button onclick="Add()">Add</button>
+    <button onclick="Mul()">Mul</button>
+    <button onclick="Sub()">Sub</button>
+    <button onclick="Div()">Div</button>
+
+    <script>
+        function Add() {
+            var num1 = parseInt(document.getElementById("text1").value);
+            var num2 = parseInt(document.getElementById("text2").value);
+            var sum = num1 + num2;
+            document.getElementById("result").value = sum;
+        }
+
+        function Mul() {
+            var num1 = parseInt(document.getElementById("text1").value);
+            var num2 = parseInt(document.getElementById("text2").value);
+            var mul = num1 * num2;
+            document.getElementById("result").value = mul;
+        }
+
+        function Sub() {
+            var num1 = parseInt(document.getElementById("text1").value);
+            var num2 = parseInt(document.getElementById("text2").value);
+            var sub = num1 - num2;
+            document.getElementById("result").value = sub;
+        }
+
+        function Div() {
+            var num1 = parseInt(document.getElementById("text1").value);
+            var num2 = parseInt(document.getElementById("text2").value);
+
+            // Check for division by zero
+            if (num2 !== 0) {
+                var div = num1 / num2;
+                document.getElementById("result").value = div;
+            } else {
+                alert("Cannot divide by zero!");
+            }
+        }
+    </script>
+</body>
+
+</html>
+
